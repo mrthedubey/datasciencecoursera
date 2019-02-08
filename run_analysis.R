@@ -4,7 +4,7 @@ path = '/home/abhishekdubey/Downloads/UCI HAR Dataset'
 ## import the imformation necesaary for the dataset
 act_labels <- fread(file.path(path, 'activity_labels.txt'), col.names = c('Labels', 'activity_name'))
 all_features <- fread(file.path(path, 'features.txt'), col.names = c('index','featuresName'))
-features_wanted_index <- grep("(mean|std)\\(\\)", all_features[, featuresName])
+features_mean|std_index <- grep("(mean|std)\\(\\)", all_features[, featuresName])
 measurements <- all_features[features_wanted_index, featuresName]
 measurements <- gsub("[()]","", measurements)
 
